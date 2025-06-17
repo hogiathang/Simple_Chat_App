@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Server",
+      "request": "launch",
+      "mainClass": "Server",
+      "projectName": "server_b7bb50e4"
+    },
+    {
+      "name": "Python: Debug with Arguments",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/run.py",
+      "args": ["test", "CheckSuite"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/src"
+    }
+  ]
+}
