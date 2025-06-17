@@ -62,7 +62,10 @@ public class Client {
     }
 }
 
-
+/**
+ * InputMessage dùng để xử lý tin nhắn nhận được từ server xuống client
+ * @Param serverMessage: Dùng để xử lý tin nhắn từ server
+ */
 class InputMessage implements  Runnable {
     private final InputStream serverMessage;
 
@@ -85,7 +88,10 @@ class InputMessage implements  Runnable {
     }
 } 
 
-
+/**
+ * OutputMessage dùng để gởi tin nhắn lên trên server
+ * @Param clientMessage: Dùng để đẩy tin nhắn lên clientMessage
+ */
 class OutputMessage implements Runnable {
     private final OutputStream clientMessage;
 
@@ -95,9 +101,9 @@ class OutputMessage implements Runnable {
 
     @Override
     public void run() {
-        StringBuilder inputStream = new StringBuilder();
         try (Scanner scanner = new Scanner(System.in)){
             while (true) {
+                StringBuilder inputStream = new StringBuilder();
                 // Gởi tin nhắn lên server
                 inputStream.append(scanner.nextLine());
                 inputStream.append("\n");

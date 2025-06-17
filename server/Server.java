@@ -7,6 +7,12 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Server class dùng để xử lý tin nhắn từ phía người dùng gởi lên
+ * @Param serverInstance: instance của server
+ * @Param clientThreads: Danh sách chứa thread clients. Mỗi thread dùng để xử lý kết nối với người dùng
+ * @Param clients: Danh sách người dùng kết nối đến server.
+ */
 public class Server {
     private static final Server severInstance = null;
     private ServerSocket serverSocket = null;
@@ -69,6 +75,11 @@ public class Server {
     }
 }
 
+/**
+ * Class Client dùng để chay luồn xử lý các tin nhắn qua socket từ người dùng
+ * @param clientSocket dùng để giữ socket tới phía người dùng
+ * @param server con trỏ trỏ đến class server
+*/
 class Client implements Runnable {
 
     private final Socket clientSocket;
